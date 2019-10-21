@@ -1,5 +1,7 @@
 package com.jhonyvillani.workshopmongo.config;
 
+import java.util.Arrays;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
@@ -22,8 +24,6 @@ public class Instantiation implements CommandLineRunner {
 		User pedro = new User(null, "Pedro Villani", "pedro@gmail.com");
 		User jhean = new User(null, "Jhean Villani", "jhean@gmail.com");
 		
-		userRepository.save(jhony);
-		userRepository.save(pedro);
-		userRepository.save(jhean);
+		userRepository.saveAll(Arrays.asList(jhony, pedro, jhean));
 	}
 }
